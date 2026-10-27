@@ -1,0 +1,98 @@
+===== TESTES FUNCIONAIS =====
+
+[AVL] arvore vazia
+  [OK] buscar em arvore vazia retorna falso
+  [OK] remover em arvore vazia retorna falso
+  [OK] percurso em ordem vazio
+  [OK] altura 0
+  [OK] propriedades validas
+
+[AVL] um elemento
+  [OK] inserir 10
+  [OK] buscar 10
+  [OK] altura 1
+  [OK] propriedades validas
+  [OK] remover 10
+  [OK] arvore volta a ficar vazia
+  [OK] propriedades validas apos remover
+
+[AVL] duplicados e inexistentes
+  [OK] inserir 5 repetido e recusado
+  [OK] tamanho continua 3
+  [OK] buscar 99 inexistente retorna falso
+  [OK] remover 99 inexistente retorna falso
+  [OK] arvore intacta
+
+[AVL] remocao com 0, 1 e 2 filhos
+  [OK] remover 20 (folha)
+  [OK] remover 40 (um filho)
+  [OK] remover 30 (dois filhos)
+  [OK] remover 50 (raiz)
+
+[AVL] ordens de insercao
+  [OK] insercao crescente de 1000 elementos
+  [OK] insercao decrescente de 1000 elementos
+  [OK] insercao aleatoria de 1000 elementos
+
+[AVL] estresse: 20000 operacoes aleatorias validando a cada uma
+  [OK] retornos, conteudo e propriedades corretos em todas as operacoes
+
+[Rubro-Negra] arvore vazia
+  [OK] buscar em arvore vazia retorna falso
+  [OK] remover em arvore vazia retorna falso
+  [OK] percurso em ordem vazio
+  [OK] altura 0
+  [OK] propriedades validas
+
+[Rubro-Negra] um elemento
+  [OK] inserir 10
+  [OK] buscar 10
+  [OK] altura 1
+  [OK] propriedades validas
+  [OK] remover 10
+  [OK] arvore volta a ficar vazia
+  [OK] propriedades validas apos remover
+
+[Rubro-Negra] duplicados e inexistentes
+  [OK] inserir 5 repetido e recusado
+  [OK] tamanho continua 3
+  [OK] buscar 99 inexistente retorna falso
+  [OK] remover 99 inexistente retorna falso
+  [OK] arvore intacta
+
+[Rubro-Negra] remocao com 0, 1 e 2 filhos
+  [OK] remover 20 (folha)
+  [OK] remover 40 (um filho)
+  [OK] remover 30 (dois filhos)
+  [OK] remover 50 (raiz)
+
+[Rubro-Negra] ordens de insercao
+  [OK] insercao crescente de 1000 elementos
+  [OK] insercao decrescente de 1000 elementos
+  [OK] insercao aleatoria de 1000 elementos
+
+[Rubro-Negra] estresse: 20000 operacoes aleatorias validando a cada uma
+  [OK] retornos, conteudo e propriedades corretos em todas as operacoes
+
+Total: 50 verificacoes, 0 falhas
+
+===== ALTURA DA BST SEM BALANCEAMENTO (N=1000) =====
+crescente: 1000
+decrescente: 1000
+aleatoria: 22
+
+===== COMPARACAO (mesmas sequencias nas duas arvores) =====
+
+N = 1000 (remocao de 500 chaves)
+crescente                  | AVL ins: h=10  rot=990    | RB ins: h=17  rot=983    rec=4909   | AVL rem: h=10  rot=71     | RB rem: h=10  rot=82     rec=1189   | validas: sim
+decrescente                | AVL ins: h=10  rot=990    | RB ins: h=17  rot=983    rec=4909   | AVL rem: h=10  rot=82     | RB rem: h=11  rot=93     rec=1203   | validas: sim
+aleatoria                  | AVL ins: h=12  rot=690    | RB ins: h=12  rot=572    rec=2306   | AVL rem: h=11  rot=204    | RB rem: h=11  rot=208    rec=957    | validas: sim
+
+N = 100000 (remocao de 50000 chaves)
+crescente                  | AVL ins: h=17  rot=99983  | RB ins: h=31  rot=99969  rec=499846 | AVL rem: h=17  rot=8406   | RB rem: h=19  rot=9239   rec=120867 | validas: sim
+decrescente                | AVL ins: h=17  rot=99983  | RB ins: h=31  rot=99969  rec=499846 | AVL rem: h=17  rot=8351   | RB rem: h=18  rot=9263   rec=120949 | validas: sim
+aleatoria                  | AVL ins: h=20  rot=69974  | RB ins: h=20  rot=58426  rec=231927 | AVL rem: h=19  rot=20559  | RB rem: h=20  rot=19940  rec=95358  | validas: sim
+
+===== TEMPO (N=1000000, insercao aleatoria + 1000000 buscas) =====
+AVL: 1197 ms, altura 24, rotacoes 697563
+RB: 1301 ms, altura 24, rotacoes 581437, recoloracoes 2316989
